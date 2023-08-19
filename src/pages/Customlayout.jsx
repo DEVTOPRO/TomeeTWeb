@@ -7,7 +7,6 @@ export default function Customlayout (props) {
     <div>
       <Header Redirectpath={props.Redirectpath} />  
       <Toolbar />    
-      <Toolbar />    
       <Outlet/>
       <Footer Redirectpath={props.Redirectpath}/>
     </div>

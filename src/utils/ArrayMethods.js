@@ -75,3 +75,10 @@ export const searchByKeyword = (listOfItems,field,searchKey,objectName) => {
     return Array.from(new Set(filteredItems));
   }
 };
+
+
+export const timeOutCaller=(stateFunction,time)=>{
+  setTimeout(()=>{
+    stateFunction(null)
+  },time?time:2500)
+} 

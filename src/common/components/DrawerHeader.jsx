@@ -49,7 +49,7 @@ export default function DrawerMainPage (props) {
     '/registarationbForm',
     '/patientDashboard'
   ];
-  const leftMenu = [{name:'My Policies',path: "/Dashboard"}, {name:'Profile',path: "/Dashboard/Profile"},{name:'Terms & Conditions',path:'/Dashboard/termsAndConditions',},{name:'Payment Methods',path:'/Dashboard/paymentMethods',},]
+  const leftMenu = [{name:'My Policies',path: "/Dashboard"}, {name:'Profile',path: "/Dashboard/Profile"},{name:'Terms & Conditions',path:'/Dashboard/termsAndConditions',},{name:'Payment Methods',path:'/Dashboard/paymentMethods'},{}]
   const handleLeftMenu = (path,name) => {
     props.Redirectpath(path)
     setHighlightItem(name)

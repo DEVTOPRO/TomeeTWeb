@@ -8,6 +8,9 @@ import Singup from "../assests/images/SignInImg.svg";
 import ErrorMessage from "../common/components/ErrorMessage";
 import { useForm } from "react-hook-form";
 import Select from "../common/components/NewSelect";
+import {signUp} from '../Api/apiSection/apiUrlConstent';
+import service from '../Api/apiSection/service';
+import Alertmessage from '../common/components/AlertMessage';
 const useStyles = makeStyles((theme) => ({
   title: {
     color: "#0071dc",
@@ -23,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp(props) {
   const classes = useStyles();
-
+  const [message,setMessage]=useState(null)
   const {
     register,
     unregister,
@@ -37,10 +40,16 @@ export default function SignUp(props) {
   } = useForm();
   const onSubmitHandler = (data) => {
     console.log(data);
+    service.create(signUp,data).then((respones)=>{
+     if(respones.data.statusMessage=="success"){
+      setMessage("The activation link is successfully sent to user e-mail Id")
+     }else{
+      setMessage(respones.data.responseMessage)
+     }
+    }).catch((e)=>setMessage("technical error"))
   };
   const numberValidater=(e)=>{
     e.target.value =(e.target.validity.valid) ? e.target.value :"";
-    
   }
   return (
     <>
@@ -70,6 +79,7 @@ export default function SignUp(props) {
               className={classes.title}
             >
               Create Account
+              {message!=null&&<Alertmessage stauts={"success"} message={message}/>}
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
               <Label labelName={"First name*"} />
@@ -118,32 +128,32 @@ export default function SignUp(props) {
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
               <Label labelName={"Email Id*"} />
               <Input
-                name="email"
+                name="userName"
                 //  readOnly={autoData?.isOpen}
-                inputRef={register("email", {
+                inputRef={register("userName", {
                   required: true,
                   pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                 })}
                 type="text"
                 shrink={true}
               />
-              {errors.email && errors.email.type === "required" && (
+              {errors.userName && errors.userName.type === "required" && (
                 <ErrorMessage message="Required !!" />
               )}
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
               <Label labelName={"Date of Birth*"} />
               <Input
-                name="dob"
+                name="dataOfBirth"
                 //  readOnly={autoData?.isOpen}
-                inputRef={register("dob", {
+                inputRef={register("dataOfBirth", {
                   required: true,
                 })}
                 max={"2023-08-13"}
                 type="date"
                 shrink={true}
               />
-              {errors.dob && errors.dob.type === "required" && (
+              {errors.dataOfBirth && errors.dataOfBirth.type === "required" && (
                 <ErrorMessage message="Required !!" />
               )}
             </Grid>
@@ -156,8 +166,8 @@ export default function SignUp(props) {
                   keyValue={"genderVal"}
                   displayValue={"genderNam"}
                   listItems={[
-                    { genderVal: "female", genderNam: "Female" },
-                    { genderVal: "male", genderNam: "Male" },
+                    { genderVal: "FEMALE", genderNam: "Female" },
+                    { genderVal: "MALE", genderNam: "Male" },
                   ]}
                   register={register("gender", {
                     required: true,

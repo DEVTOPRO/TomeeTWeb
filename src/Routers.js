@@ -8,6 +8,7 @@ import CreatePing from './pages/CreatePin';
 import OverView from "./pages/OverViewSection";
 import UserInfo from "./pages/UserInfo";
 import ChatPage from "./pages/ChatPage";
+import ErrorPage from "./pages/ErrorPage";
 export default function Routers(Redirectpath, getConstValue) {
   let route = [
     {
@@ -34,10 +35,10 @@ export default function Routers(Redirectpath, getConstValue) {
             }
             ],
         },
-        { path: "/signup", element: <SignUp /> },
-        { path: "/CreationPassword", element: <CreatePing/> },
-        { path: "/forgetPassword", element: <CreatePing/> },
-     
+        { path: "/signup", element: <SignUp Redirectpath={Redirectpath} /> },
+        { path: "/CreationPassword", element: <CreatePing Redirectpath={Redirectpath}/> },
+        { path: "/forgetPassword", element: <CreatePing Redirectpath={Redirectpath}/> },
+        { path: "/errorPage", element: <ErrorPage Redirectpath={Redirectpath}/> },
       ],
     },
     { path: "*", element: <Defaultpage /> }, 

@@ -124,10 +124,6 @@ const ResponsiveAppBar = (props) => {
   };
    
   const logoutHandler = () => {
-    context.dispatch({ type: 'isAuthorized', value: false });
-    localStorage.removeItem('custId');
-    sessionStorage.removeItem('type');
-    localStorage.removeItem('agentId');
     props.Redirectpath('/');
   };
   const loginHandler = () => {
@@ -157,7 +153,7 @@ const ResponsiveAppBar = (props) => {
             onClick={() => handleCloseNavMenu('/')}
             className={classes.headerIcon}
           >
-            <img src={AppMainIcon} width={"27%"} />
+            <img src={AppMainIcon} width={"40%"} />
           </Typography>
           <Box
             sx={{

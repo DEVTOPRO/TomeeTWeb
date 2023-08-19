@@ -72,7 +72,8 @@ const classes=useStyles()
   {key:"overView",page:"OverView",path:'/homeOver-view/overViewPage',icon:<DashboardOutlinedIcon/>},
   {key:"user",page:"User Info",path:'/homeOver-view/userPage',icon:<GroupsOutlinedIcon/>},
   {key:"chat",page:'Chat',path:'/homeOver-view/chatPage',icon:<ThreePOutlinedIcon/>},
-  {key:"job",page:"Job Schedule",path:"/",icon:<WorkHistoryOutlinedIcon/>}
+  {key:"job",page:"Job Schedule",path:"/",icon:<WorkHistoryOutlinedIcon/>},
+  {key:"learn",page:"Traning Session",path:"/",icon:<WorkHistoryOutlinedIcon/>}
 ]
 
 const pathHandler=(path,key)=>{
@@ -82,7 +83,7 @@ props.Redirectpath(path)
   return (
     <Box sx={{ display: 'flex' }} className={classes.root}>
       <Drawer variant="permanent" open={true} style={{background:"#f4f5f8"}} >  
-      <Toolbar />
+      <Toolbar sx={{padding:"10px 0px"}}/>
         <List>
           {routersObject.map((data, index) => (
             <ListItem key={data.page} disablePadding sx={{ display: 'block', padding:"5px" }}>
@@ -112,7 +113,7 @@ props.Redirectpath(path)
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, padding:"0px 30px" }}>
+      <Box component="main" sx={{ flexGrow: 1, padding:"20px 30px" }}>
         <Outlet/>
       </Box>
     </Box>
