@@ -170,7 +170,7 @@ return(
                   padding={"10px"}
                 />
                       <ActionButton 
-                buttonText={"creat Account"}
+                buttonText={"create Account"}
                 backgroundColor={"#fff"}
                 handleSubmit={()=>creatHandler("create")}
                 color={"#000"}

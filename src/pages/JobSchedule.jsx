@@ -1,4 +1,4 @@
-export default function JobSchedul(){
+export default function JobSchedule(props){
     return(
         <div>
             <h1 style={{height:"450px",fontSize:"80px"}}>

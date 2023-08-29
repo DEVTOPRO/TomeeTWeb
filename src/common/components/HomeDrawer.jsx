@@ -72,7 +72,7 @@ const classes=useStyles()
   {key:"overView",page:"OverView",path:'/homeOver-view/overViewPage',icon:<DashboardOutlinedIcon/>},
   {key:"user",page:"User Info",path:'/homeOver-view/userPage',icon:<GroupsOutlinedIcon/>},
   {key:"chat",page:'Chat',path:'/homeOver-view/chatPage',icon:<ThreePOutlinedIcon/>},
-  {key:"job",page:"Job Schedule",path:"/",icon:<WorkHistoryOutlinedIcon/>},
+  {key:"job",page:"Job Schedule",path:"/homeOver-view/jobSchedulingPage",icon:<WorkHistoryOutlinedIcon/>},
   {key:"learn",page:"Traning Session",path:"/",icon:<WorkHistoryOutlinedIcon/>}
 ]
 

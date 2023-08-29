@@ -212,7 +212,7 @@ export default function SignUp(props) {
               sx={{ textAlign: "center" }}
             >
               <ActionButton
-                buttonText={"Creat Account"}
+                buttonText={"Create Account"}
                 backgroundColor={"#8c7eff"}
                 width={"323px"}
                 borderRadius={"15px"}

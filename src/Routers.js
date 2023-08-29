@@ -15,8 +15,8 @@ export default function Routers(Redirectpath, getConstValue) {
   let route = [
     {
       path: "/",
-      // element: <Customlayout Redirectpath={Redirectpath} />,
-      element:<JobShedule/>,
+       element: <Customlayout Redirectpath={Redirectpath} />,
+      //element:<JobShedule/>,
       children: [
         { index: true, element: <HomePage Redirectpath={Redirectpath} /> },
         {
@@ -35,7 +35,11 @@ export default function Routers(Redirectpath, getConstValue) {
             {
               path: "/homeOver-view/chatPage",
               element: <ChatPage Redirectpath={Redirectpath} />,
-            }
+             },
+            {
+              path: "/homeOver-view/jobSchedulingPage",
+              element: <JobShedule Redirectpath={Redirectpath} />,
+            },
             ],
         },
         { path: "/signup", element: <SignUp Redirectpath={Redirectpath} /> },
