@@ -9,11 +9,14 @@ import OverView from "./pages/OverViewSection";
 import UserInfo from "./pages/UserInfo";
 import ChatPage from "./pages/ChatPage";
 import ErrorPage from "./pages/ErrorPage";
+import JobShedule from './pages/JobShedule';
+import UserShedule from "./pages/UserShedule";
 export default function Routers(Redirectpath, getConstValue) {
   let route = [
     {
       path: "/",
-      element: <Customlayout Redirectpath={Redirectpath} />,
+      // element: <Customlayout Redirectpath={Redirectpath} />,
+      element:<JobShedule/>,
       children: [
         { index: true, element: <HomePage Redirectpath={Redirectpath} /> },
         {

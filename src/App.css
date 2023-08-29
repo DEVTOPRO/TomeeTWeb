@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.dx-scheduler-time-panel { 
+  display: none
+}
+
+dx-scheduler-work-space.dx-scheduler-timeline-week .dx-scheduler-header-scrollable {
+  height: 50px;
+}
